@@ -1,10 +1,15 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
+import AddTaskForm from "./components/AddTaskForm";
+import TaskList from "./components/TaskList";
+import Tasks from "./components/Tasks";
 
 function App() {
   return (
-    <div>
-      Entry Point
+    <div className="appContainer">
+      <AddTaskForm />
+      <TaskList />
+      <Tasks />
     </div>
   );
 }
