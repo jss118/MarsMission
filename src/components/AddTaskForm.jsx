@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addTask } from "../redux/taskSlice";
 
 const initialValues = {
   title: "",
@@ -10,6 +12,8 @@ const initialValues = {
 export default function AddTaskForm(props) {
   const [values, setValues] = useState(initialValues);
 
+  const dispatch = useDispatch();
+
   const handleInputChange = event => {
     const { name, value } = event.target;
     setValues({
@@ -18,9 +22,9 @@ export default function AddTaskForm(props) {
     });
   };
 
-  const addTask = event => {
+  const handleSubmit = event => {
     event.preventDefault();
-    console.log(values);
+    dispatch(addTask(values));
   };
 
   return (
@@ -42,22 +46,22 @@ export default function AddTaskForm(props) {
         />
         <input
           onChange={handleInputChange}
-          placeholder="Your name"
-          type="text"
-          value={values.createdBy}
-          name="createdBy"
-        />
-        <input
-          onChange={handleInputChange}
           placeholder="Assigned to..."
           type="text"
           value={values.assignedTo}
           name="assignedTo"
         />
+        <input
+          onChange={handleInputChange}
+          placeholder="Created by..."
+          type="text"
+          value={values.createdBy}
+          name="createdBy"
+        />
         <button
           type="submit"
           onClick={values => {
-            addTask(values);
+            handleSubmit(values);
           }}
         >
           Add Task!
