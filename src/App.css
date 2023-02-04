@@ -1,1 +1,15 @@
-/* You can use  */
+.flexForm {
+  margin: 5% 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.list__div {
+  margin: 5% 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
