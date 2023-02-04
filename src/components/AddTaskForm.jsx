@@ -1,43 +1,67 @@
 import React, { useState } from "react";
 
-export default function AddTaskForm(props) {
-  const [task, setTask] = useState("");
-  const [description, setDescription] = useState("");
-  const [createdBy, setCreatedBy] = useState("");
-  const [assignedTo, setAssignedTo] = useState("");
+const initialValues = {
+  title: "",
+  description: "",
+  createdBy: "",
+  assignedTo: "",
+};
 
-  const onSubmit = event => {
+export default function AddTaskForm(props) {
+  const [values, setValues] = useState(initialValues);
+
+  const handleInputChange = event => {
+    const { name, value } = event.target;
+    setValues({
+      ...values,
+      [name]: value,
+    });
+  };
+
+  const addTask = event => {
     event.preventDefault();
+    console.log(values);
   };
 
   return (
     <div>
-      <form onSubmit={onSubmit} className="flexForm">
+      <form className="flexForm">
         <input
-          onChange={event => setTask(event.target.value)}
+          onChange={handleInputChange}
           placeholder="Title"
           type="text"
-          value={task}
+          value={values.title}
+          name="title"
         />
         <input
-          onChange={event => setDescription(event.target.value)}
+          onChange={handleInputChange}
           placeholder="Description"
           type="text"
-          value={description}
+          value={values.description}
+          name="description"
         />
         <input
-          onChange={event => setCreatedBy(event.target.value)}
+          onChange={handleInputChange}
           placeholder="Your name"
           type="text"
-          value={createdBy}
+          value={values.createdBy}
+          name="createdBy"
         />
         <input
-          onChange={event => setAssignedTo(event.target.value)}
+          onChange={handleInputChange}
           placeholder="Assigned to..."
           type="text"
-          value={assignedTo}
+          value={values.assignedTo}
+          name="assignedTo"
         />
-        <button>Add Task!</button>
+        <button
+          type="submit"
+          onClick={values => {
+            addTask(values);
+          }}
+        >
+          Add Task!
+        </button>
       </form>
     </div>
   );
