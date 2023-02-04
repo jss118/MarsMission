@@ -39,13 +39,6 @@ export default function AddTaskForm(props) {
         />
         <input
           onChange={handleInputChange}
-          placeholder="Description"
-          type="text"
-          value={values.description}
-          name="description"
-        />
-        <input
-          onChange={handleInputChange}
           placeholder="Assigned to..."
           type="text"
           value={values.assignedTo}
@@ -57,6 +50,13 @@ export default function AddTaskForm(props) {
           type="text"
           value={values.createdBy}
           name="createdBy"
+        />
+        <input
+          onChange={handleInputChange}
+          placeholder="Description"
+          type="text"
+          value={values.description}
+          name="description"
         />
         <button
           type="submit"
