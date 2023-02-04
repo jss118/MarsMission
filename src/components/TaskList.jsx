@@ -12,6 +12,7 @@ const TaskList = () => {
           return (
             <SingleTask
               key={task.id}
+              id={task.id}
               title={task.title}
               des={task.description}
               createdBy={task.createdBy}
