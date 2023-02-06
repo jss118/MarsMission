@@ -82,3 +82,25 @@
 input {
   margin-bottom: 5px;
 }
+
+.deleteAll__button {
+  padding: 15px;
+  margin: 0 20% 2% 7%;
+  width: 198px;
+  background-color: white;
+  color: rgb(224, 0, 0);
+  font-size: 15px;
+  font-weight: bold;
+  border: 2px solid black;
+  border-radius: 8px;
+}
+
+.deleteAll__button:hover {
+  cursor: pointer;
+  color: white;
+  background-color: red;
+}
+
+.deleteAll__button:active {
+  opacity: 0.7;
+}
