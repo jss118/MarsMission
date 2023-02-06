@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import AddTaskForm from "./components/AddTaskForm";
+import DeleteAllTasks from "./components/DeleteAllTasks";
 import Header from "./components/Header";
 import TaskList from "./components/TaskList";
 
@@ -12,6 +13,7 @@ function App() {
         <div className="sidePanel__div">
           <AddTaskForm />
           <TaskList />
+          <DeleteAllTasks />
         </div>
       </div>
     </div>

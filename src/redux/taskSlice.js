@@ -54,9 +54,13 @@ const taskSlice = createSlice({
       });
       return state;
     },
+    deleteAll: state => {
+      state = [];
+      return state;
+    },
   },
 });
 
-export const { addTask, removeTask, updateTask } = taskSlice.actions;
+export const { addTask, removeTask, updateTask, deleteAll } = taskSlice.actions;
 
 export default taskSlice.reducer;
