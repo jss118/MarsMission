@@ -43,6 +43,7 @@
 .addTaskForm__form {
   position: absolute;
   top: 5%;
+  left: 5%;
 }
 
 .list__div {
@@ -63,10 +64,17 @@
 
 .listItem__li {
   border: 1px solid black;
+  border-radius: 6px;
   background-color: aliceblue;
   padding: 5%;
   margin-bottom: 3%;
   list-style: none;
+  transition: 0.1s;
+}
+
+.listItem__li:hover {
+  scale: 1.05;
+  cursor: pointer;
 }
 
 .description__p {
@@ -92,7 +100,7 @@ input {
   font-size: 15px;
   font-weight: bold;
   border: 2px solid black;
-  border-radius: 8px;
+  border-radius: 6px;
 }
 
 .deleteAll__button:hover {

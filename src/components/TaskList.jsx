@@ -17,6 +17,7 @@ const TaskList = () => {
               des={task.description}
               createdBy={task.createdBy}
               assignedTo={task.assignedTo}
+              selected={task.selected}
             />
           );
         })}

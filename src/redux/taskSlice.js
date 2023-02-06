@@ -9,6 +9,7 @@ const taskSlice = createSlice({
       description: "fill the engine with fuel",
       assignedTo: "Joe",
       createdBy: "Captain Phillips",
+      selected: false,
     },
     {
       id: 2,
@@ -16,6 +17,7 @@ const taskSlice = createSlice({
       description: "fix the thrusters!",
       assignedTo: "anyone",
       createdBy: "Captain Redux",
+      selected: false,
     },
     {
       id: 3,
@@ -23,6 +25,7 @@ const taskSlice = createSlice({
       description: "Replace the wind screen",
       assignedTo: "Bill",
       createdBy: "Diago",
+      selected: false,
     },
   ],
   reducers: {
