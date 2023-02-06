@@ -1,14 +1,19 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { removeTask } from "../redux/taskSlice";
+import { removeTask, selectTask } from "../redux/taskSlice";
 import UpdateTaskForm from "./UpdateTaskForm";
+import { Link } from "react-router-dom";
 
-const SingleTask = ({ id, title, des, assignedTo, createdBy }) => {
+const SingleTask = ({ id, title, des, assignedTo, createdBy, selected }) => {
   const [update, setUpdate] = useState(false);
   const dispatch = useDispatch();
 
   const handleDelete = () => {
     dispatch(removeTask({ id }));
+  };
+
+  const taskSelect = () => {
+    dispatch(selectTask(id));
   };
 
   if (update) {
@@ -24,22 +29,32 @@ const SingleTask = ({ id, title, des, assignedTo, createdBy }) => {
     );
   }
   return (
-    <li className="listItem__li">
-      <h2>{title}</h2>
-      <p>assigned to: {assignedTo}</p>
-      <p>created by: {createdBy}</p>
-      <div>
-        <p className="description__p">{des}</p>
-      </div>
-      <button
-        onClick={() => {
-          setUpdate(true);
-        }}
+    <Link
+      style={{ textDecoration: "none" }}
+      to={`/${id}`}
+      key={id}
+      state={{ id, title, des, assignedTo, createdBy, selected }}
+    >
+      <li
+        onClick={taskSelect}
+        className={`listItem__li ${selected ? "selectedTask" : null}`}
       >
-        Update
-      </button>
-      <button onClick={handleDelete}>Delete</button>
-    </li>
+        <h2 className="ellipsisOverflow-SingleTasks">{title}</h2>
+        <p className="ellipsisOverflow-SingleTasks">
+          assigned to: {assignedTo}
+        </p>
+        <p className="ellipsisOverflow-SingleTasks">created by: {createdBy}</p>
+        <p className="ellipsisOverflow-SingleTasks">{des}</p>
+        <button
+          onClick={() => {
+            setUpdate(true);
+          }}
+        >
+          Update
+        </button>
+        <button onClick={handleDelete}>Delete</button>
+      </li>
+    </Link>
   );
 };
 
