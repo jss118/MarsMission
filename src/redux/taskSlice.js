@@ -40,16 +40,19 @@ const taskSlice = createSlice({
       return state.filter(task => task.id !== action.payload.id);
     },
     updateTask: (state, action) => {
-      const newState = state.map(task => {
-        if (task.id === action.payload.id) {
-          task.title = action.payload.title;
-          task.description = action.payload.description;
-          task.createdBy = action.payload.createdBy;
-          task.assignedTo = action.payload.assignedTo;
+      const updatedTask = {
+        id: action.payload.id,
+        title: action.payload.title,
+        description: action.payload.description,
+        assignedTo: action.payload.assignedTo,
+        createdBy: action.payload.createdBy,
+      };
+      state.forEach((task, index) => {
+        if (task.id === updatedTask.id) {
+          state.splice(index, 1, updatedTask);
         }
-        return task;
       });
-      return newState;
+      return state;
     },
   },
 });
