@@ -29,7 +29,10 @@ export default function AddTaskForm() {
 
   return (
     <div>
-      <form className="flexForm" action="inputSubmission">
+      <form
+        className="flexForm__form addTaskForm__form"
+        action="inputSubmission"
+      >
         <input
           onChange={handleInputChange}
           placeholder="Title"

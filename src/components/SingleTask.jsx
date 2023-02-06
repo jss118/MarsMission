@@ -24,11 +24,13 @@ const SingleTask = ({ id, title, des, assignedTo, createdBy }) => {
     );
   }
   return (
-    <li>
+    <li className="listItem__li">
       <h2>{title}</h2>
       <p>assigned to: {assignedTo}</p>
       <p>created by: {createdBy}</p>
-      <p>{des}</p>
+      <div>
+        <p className="description__p">{des}</p>
+      </div>
       <button
         onClick={() => {
           setUpdate(true);
