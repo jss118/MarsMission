@@ -1,18 +1,16 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addTask } from "../redux/taskSlice";
+import { updateTask } from "../redux/taskSlice";
 
-const initialValues = {
-  title: "",
-  description: "",
-  createdBy: "",
-  assignedTo: "",
-};
-
-export default function AddTaskForm() {
-  const [values, setValues] = useState(initialValues);
-
+const UpdateTaskForm = props => {
   const dispatch = useDispatch();
+  const [values, setValues] = useState({
+    id: props.id,
+    title: props.title,
+    description: props.des,
+    assignedTo: props.assignedTo,
+    createdBy: props.createdBy,
+  });
 
   const handleInputChange = event => {
     const { name, value } = event.target;
@@ -24,19 +22,19 @@ export default function AddTaskForm() {
 
   const handleSubmit = event => {
     event.preventDefault();
-    dispatch(addTask(values));
+    dispatch(updateTask(values));
+    props.setUpdate(false);
   };
 
   return (
     <div>
-      <form className="flexForm" action="inputSubmission">
+      <form className="flexForm">
         <input
           onChange={handleInputChange}
           placeholder="Title"
           type="text"
           value={values.title}
           name="title"
-          required
         />
         <input
           onChange={handleInputChange}
@@ -44,7 +42,6 @@ export default function AddTaskForm() {
           type="text"
           value={values.assignedTo}
           name="assignedTo"
-          required
         />
         <input
           onChange={handleInputChange}
@@ -52,7 +49,6 @@ export default function AddTaskForm() {
           type="text"
           value={values.createdBy}
           name="createdBy"
-          required
         />
         <input
           onChange={handleInputChange}
@@ -60,7 +56,6 @@ export default function AddTaskForm() {
           type="text"
           value={values.description}
           name="description"
-          required
         />
         <button
           type="submit"
@@ -68,9 +63,12 @@ export default function AddTaskForm() {
             handleSubmit(values);
           }}
         >
-          Add Task!
+          Update
         </button>
+        <button onClick={() => props.setUpdate(false)}>Cancel</button>
       </form>
     </div>
   );
-}
+};
+
+export default UpdateTaskForm;

@@ -1,14 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { removeTask } from "../redux/taskSlice";
+import UpdateTaskForm from "./UpdateTaskForm";
 
-const SingleTask = props => {
-  const { title, des, assignedTo, createdBy } = props;
+const SingleTask = ({ id, title, des, assignedTo, createdBy }) => {
+  const [update, setUpdate] = useState(false);
+  const dispatch = useDispatch();
+
+  const handleDelete = () => {
+    dispatch(removeTask({ id }));
+  };
+
+  if (update) {
+    return (
+      <UpdateTaskForm
+        id={id}
+        title={title}
+        des={des}
+        assignedTo={assignedTo}
+        createdBy={createdBy}
+        setUpdate={setUpdate}
+      />
+    );
+  }
   return (
     <li>
       <h2>{title}</h2>
       <p>assigned to: {assignedTo}</p>
-      <p>{des}</p>
       <p>created by: {createdBy}</p>
-      <button>Delete</button>
+      <p>{des}</p>
+      <button
+        onClick={() => {
+          setUpdate(true);
+        }}
+      >
+        Update
+      </button>
+      <button onClick={handleDelete}>Delete</button>
     </li>
   );
 };
