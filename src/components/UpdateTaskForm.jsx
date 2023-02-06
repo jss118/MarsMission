@@ -28,7 +28,7 @@ const UpdateTaskForm = props => {
 
   return (
     <div>
-      <form className="flexForm">
+      <form className="flexForm__form">
         <input
           onChange={handleInputChange}
           placeholder="Title"
