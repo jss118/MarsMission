@@ -66,7 +66,9 @@
   border: 1px solid black;
   border-radius: 6px;
   background-color: aliceblue;
-  padding: 5%;
+  height: fit-content;
+  width: fit-content;
+  padding: 5px 10px;
   margin-bottom: 3%;
   list-style: none;
   transition: 0.1s;
@@ -77,14 +79,18 @@
   cursor: pointer;
 }
 
-.description__p {
-  height: 20px;
+.ellipsisOverflow-SingleTasks {
+  height: 30px;
   width: 170px;
   overflow: hidden;
   text-overflow: ellipsis;
   position: relative;
   display: block;
   white-space: nowrap;
+}
+
+.selectedTask {
+  border: 3px solid rgb(23, 209, 23);
 }
 
 input {

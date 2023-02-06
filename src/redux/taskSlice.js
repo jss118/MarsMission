@@ -36,6 +36,7 @@ const taskSlice = createSlice({
         description: action.payload.description,
         assignedTo: action.payload.assignedTo,
         createdBy: action.payload.createdBy,
+        selected: false,
       };
       state.push(newTask);
     },
@@ -49,6 +50,7 @@ const taskSlice = createSlice({
         description: action.payload.description,
         assignedTo: action.payload.assignedTo,
         createdBy: action.payload.createdBy,
+        selected: action.payload.selected,
       };
       state.forEach((task, index) => {
         if (task.id === updatedTask.id) {
@@ -61,9 +63,20 @@ const taskSlice = createSlice({
       state = [];
       return state;
     },
+    selectTask: (state, action) => {
+      state.forEach((task, index) => {
+        if (task.id === action.payload) {
+          state[index].selected = true;
+        } else {
+          state[index].selected = false;
+        }
+      });
+      return state;
+    },
   },
 });
 
-export const { addTask, removeTask, updateTask, deleteAll } = taskSlice.actions;
+export const { addTask, removeTask, updateTask, deleteAll, selectTask } =
+  taskSlice.actions;
 
 export default taskSlice.reducer;
