@@ -47,6 +47,34 @@
   left: 8%;
 }
 
+input {
+  border-style: none;
+  padding: 2px;
+  border-radius: 3px;
+}
+
+.add__button {
+  padding: 5px;
+  margin-bottom: 3%;
+  width: 185px;
+  color: white;
+  background-color: rgb(27, 167, 34);
+  font-size: 15px;
+  font-weight: bold;
+  border: 2px solid black;
+  border-radius: 6px;
+  transition: 0.15s;
+}
+
+.add__button:hover {
+  cursor: pointer;
+  scale: 1.1;
+}
+
+.add__button:active {
+  scale: 1;
+}
+
 .list__div {
   display: flex;
   flex-direction: column;
@@ -90,6 +118,38 @@
   white-space: nowrap;
 }
 
+.listItem__update-Button {
+  padding: 5px;
+  align-self: center;
+  width: 80px;
+  color: white;
+  background-color: rgb(27, 167, 34);
+  font-size: 15px;
+  font-weight: bold;
+  border: 2px solid black;
+  border-radius: 3px;
+}
+
+.listItem__update-Button:hover {
+  opacity: 0.8;
+}
+
+.listItem__delete-Button {
+  padding: 5px;
+  align-self: center;
+  width: 80px;
+  color: white;
+  background-color: red;
+  font-size: 15px;
+  font-weight: bold;
+  border: 2px solid black;
+  border-radius: 3px;
+}
+
+.listItem__delete-Button:hover {
+  opacity: 0.8;
+}
+
 .selectedTask {
   border: 3px solid rgb(23, 209, 23);
 }
@@ -103,8 +163,8 @@ input {
   margin-bottom: 3%;
   align-self: center;
   width: 198px;
-  background-color: white;
-  color: rgb(224, 0, 0);
+  color: white;
+  background-color: red;
   font-size: 15px;
   font-weight: bold;
   border: 2px solid black;
@@ -113,8 +173,8 @@ input {
 
 .deleteAll__button:hover {
   cursor: pointer;
-  color: white;
-  background-color: red;
+  background-color: white;
+  color: rgb(224, 0, 0);
 }
 
 .deleteAll__button:active {
@@ -141,6 +201,7 @@ input {
   width: 755px;
   height: fit-content;
   padding: 20px;
+  margin: 20px 0;
   background-color: aliceblue;
   border-radius: 8px;
   display: grid;

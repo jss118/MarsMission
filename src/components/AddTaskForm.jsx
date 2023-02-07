@@ -39,7 +39,6 @@ export default function AddTaskForm() {
           type="text"
           value={values.title}
           name="title"
-          required
         />
         <input
           onChange={handleInputChange}
@@ -47,7 +46,6 @@ export default function AddTaskForm() {
           type="text"
           value={values.assignedTo}
           name="assignedTo"
-          required
         />
         <input
           onChange={handleInputChange}
@@ -55,7 +53,6 @@ export default function AddTaskForm() {
           type="text"
           value={values.createdBy}
           name="createdBy"
-          required
         />
         <input
           onChange={handleInputChange}
@@ -63,15 +60,15 @@ export default function AddTaskForm() {
           type="text"
           value={values.description}
           name="description"
-          required
         />
         <button
+          className="add__button"
           type="submit"
           onClick={values => {
             handleSubmit(values);
           }}
         >
-          Add Task!
+          Add
         </button>
       </form>
     </div>

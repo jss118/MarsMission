@@ -46,13 +46,16 @@ const SingleTask = ({ id, title, des, assignedTo, createdBy, selected }) => {
         <p className="ellipsisOverflow-SingleTasks">created by: {createdBy}</p>
         <p className="ellipsisOverflow-SingleTasks">{des}</p>
         <button
+          className="listItem__update-Button"
           onClick={() => {
             setUpdate(true);
           }}
         >
           Update
         </button>
-        <button onClick={handleDelete}>Delete</button>
+        <button className="listItem__delete-Button" onClick={handleDelete}>
+          Delete
+        </button>
       </li>
     </Link>
   );
