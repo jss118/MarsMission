@@ -11,7 +11,7 @@ const PlanetImg = () => {
   }, []);
 
   return (
-    <div className="img__div">
+    <div>
       <img src={image} alt="The red planet." />
     </div>
   );

@@ -6,11 +6,20 @@ const CurrentTask = () => {
   const { title, des, assignedTo, createdBy } = location.state;
 
   return (
-    <div>
-      <h1>{title}</h1>
-      <h2>Assigned to: {assignedTo}</h2>
-      <p>Task description: {des}</p>
-      <h2>Created by: {createdBy}</h2>
+    <div className="currentTaskContainer__div">
+      <h1 className="currentTask__h1">{title}</h1>
+
+      <p className="currentTask__assignedTo-p">Assigned to: {assignedTo}</p>
+
+      <p className="currentTask__createdBy-p">Created by: {createdBy}</p>
+      <div className="currentTask__description-p">
+        <p>
+          Task description:
+          <br />
+          <br />
+          {des}
+        </p>
+      </div>
     </div>
   );
 };
