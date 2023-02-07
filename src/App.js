@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import TaskList from "./components/TaskList";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CurrentNumberOfTasks from "./components/CurrentNumberOfTasks";
+import PlanetImg from "./components/PlanetImg";
 
 function App() {
   return (
@@ -20,9 +21,12 @@ function App() {
             <TaskList />
             <DeleteAllTasks />
           </div>
-          <Routes>
-            <Route path="/:id" element={<CurrentTask />} />
-          </Routes>
+          <div className="taskContainer__div">
+            <PlanetImg />
+            <Routes>
+              <Route path="/:id" element={<CurrentTask />} />
+            </Routes>
+          </div>
         </div>
       </BrowserRouter>
     </div>
