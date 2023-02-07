@@ -55,7 +55,7 @@
   height: 600px;
   overflow-y: scroll;
   position: relative;
-  top: 10%;
+  top: 5%;
 }
 
 .list__div::-webkit-scrollbar {
@@ -99,7 +99,8 @@ input {
 
 .deleteAll__button {
   padding: 15px;
-  margin: 0 20% 2% 7%;
+  margin-bottom: 3%;
+  align-self: center;
   width: 198px;
   background-color: white;
   color: rgb(224, 0, 0);
@@ -117,4 +118,10 @@ input {
 
 .deleteAll__button:active {
   opacity: 0.7;
+}
+
+.taskNumber__h1 {
+  color: rgb(204, 201, 201);
+  align-self: center;
+  margin-top: 3%;
 }
