@@ -57,15 +57,23 @@ const UpdateTaskForm = props => {
           value={values.description}
           name="description"
         />
-        <button
-          type="submit"
-          onClick={values => {
-            handleSubmit(values);
-          }}
-        >
-          Update
-        </button>
-        <button onClick={() => props.setUpdate(false)}>Cancel</button>
+        <div>
+          <button
+            className="listItem__update-Button"
+            type="submit"
+            onClick={values => {
+              handleSubmit(values);
+            }}
+          >
+            Update
+          </button>
+          <button
+            className="listItem__delete-Button"
+            onClick={() => props.setUpdate(false)}
+          >
+            Cancel
+          </button>
+        </div>
       </form>
     </div>
   );
