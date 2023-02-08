@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addTask } from "../redux/taskSlice";
 
@@ -11,6 +11,15 @@ const initialValues = {
 
 export default function AddTaskForm() {
   const [values, setValues] = useState(initialValues);
+  const [allValuesSet, setAllValuesSet] = useState(false);
+
+  useEffect(() => {
+    if (Object.values(values).every(value => value !== "")) {
+      setAllValuesSet(true);
+    } else {
+      setAllValuesSet(false);
+    }
+  }, [values]);
 
   const dispatch = useDispatch();
 
@@ -24,7 +33,11 @@ export default function AddTaskForm() {
 
   const handleSubmit = event => {
     event.preventDefault();
-    dispatch(addTask(values));
+    if (allValuesSet) {
+      dispatch(addTask(values));
+    } else {
+      alert("Please fill in all input fields before adding a task...");
+    }
   };
 
   return (
@@ -64,6 +77,7 @@ export default function AddTaskForm() {
         <button
           className="add__button"
           type="submit"
+          value={values}
           onClick={values => {
             handleSubmit(values);
           }}
