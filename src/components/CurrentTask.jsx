@@ -10,7 +10,7 @@ const CurrentTask = () => {
   const task = taskInfo[0];
 
   if (task === undefined) {
-    return <p>select a task</p>;
+    return <p>{tasks.length ? "select a task" : "create a task"}</p>;
   }
   return (
     <div className="currentTaskContainer__div">
