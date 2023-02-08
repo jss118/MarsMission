@@ -94,7 +94,7 @@ input {
 .listItem__li {
   border: 1px solid black;
   border-radius: 6px;
-  background-color: aliceblue;
+  background-color: rgb(117, 193, 255);
   height: fit-content;
   width: fit-content;
   padding: 5px 10px;
@@ -151,7 +151,7 @@ input {
 }
 
 .selectedTask {
-  border: 3px solid rgb(23, 209, 23);
+  background-color: aliceblue;
 }
 
 input {
