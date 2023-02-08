@@ -10,6 +10,7 @@ const SingleTask = ({ id, title, des, assignedTo, createdBy, selected }) => {
 
   const handleDelete = () => {
     dispatch(removeTask({ id }));
+    dispatch(selectTask(id));
   };
 
   const taskSelect = () => {
