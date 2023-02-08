@@ -1,5 +1,3 @@
-# MarsMission
-
 # Welcome to MarsMission!
 
 This is a single-page martian themed to-do app, using React and Redux.
