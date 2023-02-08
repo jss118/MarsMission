@@ -2,8 +2,10 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div className="header__div">
-      <h1 className="header__h1">Interplanetary Priorities</h1>
+    <div data-testid="header-div" className="header__div">
+      <h1 data-testid="header-text" className="header__h1">
+        Interplanetary Priorities
+      </h1>
     </div>
   );
 };

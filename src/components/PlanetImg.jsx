@@ -11,7 +11,7 @@ const PlanetImg = () => {
   }, []);
 
   return (
-    <div>
+    <div data-testid="planet-img">
       <img src={image} alt="The red planet." />
     </div>
   );
